@@ -31,6 +31,11 @@ pipeline {
                 }
             }
         }
+        stage("Deploy") {
+            steps {
+                sendBuildEvent(jobType:'deploy')
+            }
+        }
     }
     post {
         always {
